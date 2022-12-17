@@ -36,8 +36,9 @@ class Doctor:
     def writeListOfDoctorsToFile(new_list):
         file=open('doctors.txt','w',newline='')
         with file:
-            write=csv.writer(file)
+            write=csv.writer(file,delimiter='_')
             write.writerows(new_list)
+            file.close
     @staticmethod
     def readDoctorsFile():
         doctors = []
@@ -47,6 +48,7 @@ class Doctor:
             doctors.append(line.strip())
         for x in range(len(doctors)):
             doc_list.append(doctors[x].split("_"))
+        openfile.close
 
         return doc_list
     def searchDoctorById(doc_list):
@@ -128,7 +130,7 @@ class Patients:
     def writeListOfPatientsToFile(new_list):
         file=open('doctors.txt','w',newline='')
         with file:
-            write=csv.writer(file)
+            write=csv.writer(file,delimiter='_')
             write.writerows(new_list)
 
     def displayPatientsInfo(t):
@@ -222,7 +224,7 @@ class Management:
 
         if Selection == 1:
             print("Doctors Menu:\n 1 - Display Doctors list\n 2 - Search for doctor by ID\n 3 - Search for doctor by name\n 4 - Add doctor\n 5 - Edit doctor info\n 6 - Back to the Main Menu\n")
-
+            doc_list=[]
             doctors=int(input())
             while doctors > 6 or doctors < 0:
                 doc_list=[]
@@ -250,11 +252,13 @@ class Management:
                 new_dr=Doctor.enterDrInfo()
                 Doctor.addDrToFile(new_dr)
             if doctors==5:
+                doc_list=[]
                 doc_list=Doctor.readDoctorsFile()
                 old_info=Doctor.searchDoctorById(doc_list)
                 new_info=Doctor.enterDrInfo()
                 new_list=Doctor.editDoctorInfo(doc_list,old_info)
                 Doctor.writeListOfDoctorsToFile(new_list)
+                doc_list2=Doctor.readDoctorsFile()
                 Doctor.addDrToFile(new_info)
                 pass
             if doctors==6: 
