@@ -1,0 +1,74 @@
+Welcome to the Alberta Hospital Management System. 
+Please select from the following:
+==========================================================
+1: Doctors
+2: Facilities
+3: Laboratories
+4: Patients
+0: Stop
+3
+
+Laboratories
+==========================================================
+1: Display laboratories list
+2: Add Laboratory
+3: Return to main menu
+1
+
+============
+ Lab | Cost
+
+Lab1 | 800
+
+Lab2 | 1200
+
+Lab3 | 500
+
+Lab4 | 50
+
+
+Laboratories
+==========================================================
+1: Display laboratories list
+2: Add Laboratory
+3: Return to main menu
+2
+Enter the name of the Laboratory: Lab5
+Enter the cost of the Laboratory: 250
+
+Laboratories
+==========================================================
+1: Display laboratories list
+2: Add Laboratory
+3: Return to main menu
+1
+
+============
+ Lab | Cost
+
+Lab1 | 800
+
+Lab2 | 1200
+
+Lab3 | 500
+
+Lab4 | 50
+
+Lab5 | 250
+
+Laboratories
+==========================================================
+1: Display laboratories list
+2: Add Laboratory
+3: Return to main menu
+3
+
+Returning to Main Menu...
+==========================================================
+1: Doctors
+2: Facilities
+3: Laboratories
+4: Patients
+0: Stop
+0
+Thank you for using the Alberta Hospital Management System.
