@@ -165,6 +165,8 @@ class Patients:
         for i in range(len(patients_list)):
             if patients_list[i][0] == patient_id:
                 return patients_list[i]
+            if patient_id!=patients_list:
+                print("Can't find the patient with the same ID on the system")
 lab_list = []
 class Laboratories:
 
@@ -309,7 +311,11 @@ class Management:
 
             if patients_input == 3:
                 add_patient = Patients.enterPatientInfo()
-                Patients.addPatientToFile(add_patient)
+                test3=Patients.addPatientToFile(add_patient)
+                if test3==None:
+                    pass
+                else:
+                    Doctor.displayDoctorInfo2(test3)
             if patients_input==4:
                 doc_list=Patients.readPatientsFile()
                 old_info=Patients.searchPatientById(doc_list)
